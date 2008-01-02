@@ -15,6 +15,7 @@ License:	GPL
 Url:		http://newbreedsoftware.com/defendguin
 Group:		Games/Arcade 
 BuildRequires:	SDL_mixer-devel X11-devel alsa-lib-devel esound-devel 
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Patch:		%{name}-0.0.5-fix-CFLAGS.patch.bz2
 
 %description
