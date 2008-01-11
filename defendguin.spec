@@ -36,17 +36,6 @@ install -d $RPM_BUILD_ROOT{%{_gamesbindir},%{_mandir}/man6}
 %make install PREFIX=$RPM_BUILD_ROOT%{_prefix} BIN_PREFIX=$RPM_BUILD_ROOT%{_gamesbindir} \
 DATA_PREFIX=$RPM_BUILD_ROOT%{_gamesdatadir}/%{name}/ MAN_PREFIX=$RPM_BUILD_ROOT%{_datadir}
 
-install -d $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}): \
-needs="x11" \
-section="More Applications/Games/Arcade" \
-title="Defendguin" \
-longtitle="%{Summary}" \
-command="%{_gamesbindir}/%{name}" \
-icon="%{name}.png" \
-xdg="true"
-EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -84,5 +73,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
 %{_datadir}/applications/*
-%{_menudir}/%{name}
 
