@@ -1,6 +1,6 @@
 %define name	defendguin
 %define version	0.0.11
-%define release	%mkrel 3
+%define release	%mkrel 5
 %define	Summary	A Defender Clone
 
 Summary:	%{Summary}
