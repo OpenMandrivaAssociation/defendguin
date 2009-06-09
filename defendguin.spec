@@ -1,6 +1,6 @@
 %define name	defendguin
 %define version	0.0.11
-%define release	%mkrel 5
+%define release	%mkrel 6
 %define	Summary	A Defender Clone
 
 Summary:	%{Summary}
@@ -11,12 +11,12 @@ Source0:	ftp://ftp.sonic.net/pub/users/nbs/unix/x/defendguin/defendguin-%{versio
 Source11:	%{name}-16x16.png
 Source12:	%{name}-32x32.png
 Source13:	%{name}-48x48.png
-License:	GPL 
+License:	GPLv2 
 Url:		http://newbreedsoftware.com/defendguin
 Group:		Games/Arcade 
 BuildRequires:	SDL_mixer-devel X11-devel alsa-lib-devel esound-devel 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
-Patch:		%{name}-0.0.5-fix-CFLAGS.patch.bz2
+Patch0:		%{name}-0.0.11-fix-CFLAGS.patch
 
 %description
 Defendguin is going to be a clone of the arcade game "Defender," but with a
@@ -31,14 +31,14 @@ and mutated by... well, you know who.
 %make CFLAGS="%{optflags}" PREFIX=%{_prefix} BIN_PREFIX=%{_gamesbindir} DATA_PREFIX=%{_gamesdatadir}/%{name}/
 
 %install
-rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_gamesbindir},%{_mandir}/man6}
-%make install PREFIX=$RPM_BUILD_ROOT%{_prefix} BIN_PREFIX=$RPM_BUILD_ROOT%{_gamesbindir} \
-DATA_PREFIX=$RPM_BUILD_ROOT%{_gamesdatadir}/%{name}/ MAN_PREFIX=$RPM_BUILD_ROOT%{_datadir}
+rm -rf %{buildroot}
+install -d %{buildroot}{%{_gamesbindir},%{_mandir}/man6}
+%make install PREFIX=%{buildroot}%{_prefix} BIN_PREFIX=%{buildroot}%{_gamesbindir} \
+DATA_PREFIX=%{buildroot}%{_gamesdatadir}/%{name}/ MAN_PREFIX=%{buildroot}%{_datadir}
 
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Encoding=UTF-8
 Name=Defendguin
@@ -65,7 +65,7 @@ install -m644 %{SOURCE13} -D %{buildroot}%{_liconsdir}/%{name}.png
 %endif
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
