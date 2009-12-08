@@ -1,13 +1,13 @@
 %define name	defendguin
-%define version	0.0.11
-%define release	%mkrel 6
+%define version	0.0.12
+%define release	%mkrel 1
 %define	Summary	A Defender Clone
 
 Summary:	%{Summary}
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Source0:	ftp://ftp.sonic.net/pub/users/nbs/unix/x/defendguin/defendguin-%{version}.tar.bz2
+Source0:	ftp://ftp.tuxpaint.org/unix/x/defendguin/src/%{name}-%{version}.tar.gz
 Source11:	%{name}-16x16.png
 Source12:	%{name}-32x32.png
 Source13:	%{name}-48x48.png
