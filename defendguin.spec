@@ -1,6 +1,6 @@
 %define name	defendguin
 %define version	0.0.12
-%define release	%mkrel 2
+%define release	%mkrel 3
 %define	Summary	A Defender Clone
 
 Summary:	%{Summary}
@@ -14,7 +14,8 @@ Source13:	%{name}-48x48.png
 License:	GPLv2 
 Url:		http://newbreedsoftware.com/defendguin
 Group:		Games/Arcade 
-BuildRequires:	SDL_mixer-devel X11-devel alsa-lib-devel esound-devel 
+BuildRequires:	SDL_mixer-devel
+BuildRequires:	SDL-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Patch0:		%{name}-0.0.11-fix-CFLAGS.patch
 
