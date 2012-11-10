@@ -1,0 +1,12 @@
+diff -p -up defendguin-0.0.11/Makefile.ori defendguin-0.0.11/Makefile
+--- defendguin-0.0.11/Makefile.ori	2009-06-09 23:28:54.000000000 +0200
++++ defendguin-0.0.11/Makefile	2009-06-09 23:30:55.000000000 +0200
+@@ -24,7 +24,7 @@ SDL_CFLAGS := $(shell sdl-config --cflag
+ SDL_LDFLAGS := $(shell sdl-config --libs) -L/usr/X11R6/lib
+ MIXER=-lSDL_mixer
+ NOSOUNDFLAG=__SOUND
+-CFLAGS=-Wall $(SDL_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" -D$(NOSOUNDFLAG) \
++override CFLAGS += $(SDL_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" -D$(NOSOUNDFLAG) \
+ 	-DJOY_$(JOY)
+ SDL_LIB=$(SDL_LDFLAGS) $(MIXER)
+ 
