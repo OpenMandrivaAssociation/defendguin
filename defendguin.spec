@@ -12,7 +12,7 @@ Source11:	%{name}-16x16.png
 Source12:	%{name}-32x32.png
 Source13:	%{name}-48x48.png
 License:	GPLv2 
-Url:		http://newbreedsoftware.com/defendguin
+Url:		https://newbreedsoftware.com/defendguin
 Group:		Games/Arcade 
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL-devel
