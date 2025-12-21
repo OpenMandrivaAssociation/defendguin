@@ -14,6 +14,7 @@ Source13:	%{name}-48x48.png
 License:	GPLv2 
 Url:		https://newbreedsoftware.com/defendguin
 Group:		Games/Arcade 
+BuildRequires:	make
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
